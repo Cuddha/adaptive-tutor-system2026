@@ -81,7 +81,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
             } catch (error) {
                 console.error('启动请求失败:', error);
-                showError('网络错误，请检查网络连接后重试');
+                // 带上真实错误信息，避免所有失败都显示同一句"网络错误"导致无法定位
+                const detail = error && error.message ? `：${error.message}` : '';
+                showError('网络错误，请检查网络连接后重试' + detail);
                 // 恢复按钮状态
                 startButton.disabled = false;
                 startButton.innerHTML = originalText;
