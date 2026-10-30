@@ -239,22 +239,14 @@ class _RedisJsonCompat:
     def get(self, key, path=None):
         if self._use_json:
             try:
-                # 注意：redis-py 6.x 的 json().get(name, *args) 会把多余位置参数
-                # 直接拼进 JSON.GET 命令；传 None 会变成 "JSON.GET key None"，
-                # 服务端报 "Path '$.None' does not exist"。因此 path 为空时必须
-                # 只传 key，不能传 None。
-                if path in (None, '', '.'):
+                # RedisJSON 的 JSON.GET 不接受显式 None 作为 path，
+                # 无 path 时必须省略参数，否则会报 "Path '$.None' does not exist"，
+                # 进而在回退到字符串读取时触发 WRONGTYPE。
+                if path is None:
                     return self._client.json().get(key)
                 return self._client.json().get(key, path)
-            except redis.ResponseError as e:
-                msg = str(e).lower()
-                if 'does not exist' in msg:
-                    # key 是 RedisJSON 类型，只是该字段路径不存在 -> 视为无此字段
-                    return None
-                if 'unknown command' in msg:
-                    # 服务端没有 RedisJSON 模块 -> 永久降级为字符串模式
-                    self._use_json = False
-                # 其余（如 WRONGTYPE：该 key 是普通字符串）继续走下面的字符串兼容读取
+            except redis.ResponseError:
+                pass
             except Exception:
                 pass
         data = self._load(key)
@@ -276,21 +268,11 @@ class _RedisJsonCompat:
     def set(self, key, path, value):
         if self._use_json:
             try:
-                return self._client.json().set(key, path, value)
-            except redis.ResponseError as e:
-                msg = str(e).lower()
-                if 'unknown command' in msg:
-                    self._use_json = False
-                elif 'does not exist' in msg:
-                    # JSON.SET 只能创建最后一级路径，父级缺失会报 Path does not exist。
-                    # 先补建根对象再重试，避免落到字符串分支把 key 写成 String 类型
-                    try:
-                        if not self._client.exists(key):
-                            self._client.json().set(key, '.', {})
-                        return self._client.json().set(key, path, value)
-                    except Exception:
-                        pass
-                # 其余（如 WRONGTYPE：该 key 是普通字符串）走下面的字符串兼容写入
+                # RedisJSON 2.x 的根路径为 '$'，'.' / 空路径统一归一化
+                json_path = '$' if path in (None, '', '.') else path
+                return self._client.json().set(key, json_path, value)
+            except redis.ResponseError:
+                pass
             except Exception:
                 pass
         data = self._load(key)
@@ -316,8 +298,7 @@ class _RedisJsonCompat:
         try:
             raw = self._client.get(key)
         except redis.ResponseError:
-            # key 实际是 RedisJSON(ReJSON-RL) 类型，普通 GET 会报 WRONGTYPE，
-            # 这里兜底返回 None，避免把 500 抛到接口层
+            # key 为 RedisJSON 类型时不能用 GET 读取，交由 JSON.GET 处理
             return None
         if raw is None:
             return None
