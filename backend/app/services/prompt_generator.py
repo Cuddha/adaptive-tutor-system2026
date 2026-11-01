@@ -16,7 +16,7 @@ class PromptGenerator:
     # 聚类名称映射（公共常量）
     CLUSTER_NAME_MAPPING = {
         '低进度': 'Struggling',
-        '正常': 'Normal', 
+        '正常': 'Normal',  
         '超进度': 'Advanced',
         'Struggling': 'Struggling',
         'Normal': 'Normal',

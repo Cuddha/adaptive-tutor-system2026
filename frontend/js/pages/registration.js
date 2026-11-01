@@ -16,6 +16,9 @@ const courseReady = loginReady ? requireSelectedCourse() : false;
 document.addEventListener('DOMContentLoaded', async () => {
     if (!loginReady || !courseReady) return;
 
+    // 版本标记：一眼看出浏览器加载的是哪一版脚本
+    console.log('%c[OJ-INTEGRATION] registration.js v20261101c 已加载', 'color:#4f46e5;font-weight:bold');
+
     // 初始化配置
     await initializeConfig();
     // 设置标题点击跳转到首页（刷新）
@@ -96,7 +99,25 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                 if (result.code === 200 || result.code === 201) {
                     saveParticipantId(result.data.participant_id);
-                    // 直接跳转到学习页面
+
+                    // 兜底：getSelectedCourse() 在数据不一致时会返回 null，
+                    // 那时直接读 localStorage 里存的原始课程 id
+                    let courseId = selectedCourse && selectedCourse.id;
+                    if (!courseId) {
+                        try {
+                            const raw = JSON.parse(window.localStorage.getItem('pbl.course.selected') || '{}');
+                            courseId = raw.id || null;
+                        } catch (e) { /* 忽略解析失败 */ }
+                    }
+                    console.log('[开始学习] 课程 id =', courseId, ' 返回码 =', result.code);
+
+                    // C语言程序设计：会话创建成功后直接进入在线判题
+                    if (courseId === 'c-programming') {
+                        window.location.href = '/pages/oj.html';
+                        return;
+                    }
+
+                    // 其他课程：直接跳转到学习页面
                     navigateTo('/pages/learning_page.html', '1_1', true);
                 } else {
                     showError(result.message || '启动失败，请重试');

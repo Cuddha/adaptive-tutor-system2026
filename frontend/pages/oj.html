@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sync-PBL学习平台 - 算法学习</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/oj.css">
+  <script src="../js/modules/iconify-icon.min.js"></script>
+</head>
+
+<body class="oj-page">
+  <div class="main-container">
+    <!-- 顶部标题栏（复用主站样式） -->
+    <header class="top-header-lean">
+      <h1 class="header-title" id="headerTitle">算法学习</h1>
+      <div class="user-profile">
+        <span class="oj-progress" id="ojProgress"></span>
+        <button class="back-button" id="chatToggleBtn" title="显示/隐藏 AI 助教">
+          <iconify-icon icon="mdi:robot-happy-outline" width="20" height="20"></iconify-icon>
+          AI 助教
+        </button>
+        <button class="back-button" id="backButton">
+          <iconify-icon icon="mdi:arrow-left" width="20" height="20"></iconify-icon>
+          返回课程
+        </button>
+        <iconify-icon icon="mdi:account-circle" width="36" height="36"></iconify-icon>
+      </div>
+    </header>
+
+    <!-- 三栏工作区 -->
+    <main class="oj-layout" id="ojLayout">
+      <!-- 左栏：题目列表 -->
+      <aside class="oj-sidebar" id="ojSidebar">
+        <div class="oj-sidebar-head">
+          <span>题目</span>
+          <span class="oj-count" id="ojCount"></span>
+          <button class="oj-icon-btn" id="collapseBtn" title="收起题目列表">
+            <iconify-icon icon="mdi:chevron-left" width="18" height="18"></iconify-icon>
+          </button>
+        </div>
+        <div class="oj-problem-list" id="problemList">
+          <div class="oj-list-loading">加载中…</div>
+        </div>
+      </aside>
+      <div class="oj-splitter-v" id="splitterLeft"></div>
+
+      <!-- 中栏：题目 + 代码 -->
+      <section class="oj-workspace" id="ojWorkspace">
+        <div class="oj-pane oj-problem-pane" id="problemPane">
+          <div class="oj-pane-head">
+            <span class="oj-pane-title" id="problemTitle">请从左侧选择题目</span>
+            <span class="oj-pane-meta" id="problemMeta"></span>
+          </div>
+          <div class="oj-pane-body" id="problemBody">
+            <div class="oj-empty">
+              <iconify-icon icon="mdi:file-document-outline" width="42" height="42"></iconify-icon>
+              <p>从左侧选一道题开始练习</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="oj-splitter-h" id="splitterH"></div>
+
+        <div class="oj-pane oj-code-pane">
+          <div class="oj-pane-head">
+            <span class="oj-pane-title">代码</span>
+            <div class="oj-editor-tools">
+              <select id="languageSelect" class="oj-select">
+                <option value="C">C</option>
+                <option value="C++">C++</option>
+                <option value="Python3">Python 3</option>
+              </select>
+              <button class="oj-btn" id="resetBtn" title="恢复初始模板">重置</button>
+              <button class="oj-btn oj-btn-primary" id="submitBtn">提交</button>
+            </div>
+          </div>
+          <div class="oj-editor">
+            <div class="oj-gutter" id="gutter"></div>
+            <textarea id="codeInput" class="oj-code" spellcheck="false"
+              placeholder="在这里写代码…"></textarea>
+          </div>
+          <div class="oj-result" id="resultPanel"></div>
+        </div>
+      </section>
+
+      <div class="oj-splitter-v" id="splitterRight"></div>
+
+      <!-- 右栏：AI 助教 -->
+      <aside class="oj-chat" id="ojChat">
+        <div class="oj-sidebar-head">
+          <span><iconify-icon icon="mdi:robot-happy-outline" width="16" height="16"></iconify-icon> AI 助教</span>
+          <button class="oj-icon-btn" id="chatCloseBtn" title="收起">
+            <iconify-icon icon="mdi:chevron-right" width="18" height="18"></iconify-icon>
+          </button>
+        </div>
+        <div class="oj-chat-body" id="chatBody">
+          <div class="oj-chat-tip">遇到问题可以问我，我会引导你思考，不会直接给答案。</div>
+        </div>
+        <div class="oj-chat-input">
+          <textarea id="chatInput" rows="2" placeholder="描述你的问题…"></textarea>
+          <button class="oj-btn oj-btn-primary" id="chatSendBtn">发送</button>
+        </div>
+      </aside>
+      <!-- 左栏收起后的恢复按钮 -->
+      <button class="oj-fab is-hidden" id="sidebarFab" title="显示题目列表">
+        <iconify-icon icon="mdi:chevron-right" width="18" height="18"></iconify-icon>
+      </button>
+
+    </main>
+  </div>
+
+  <script type="module" src="../js/pages/ojPage.js"></script>
+</body>
+
+</html>
