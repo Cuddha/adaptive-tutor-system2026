@@ -24,9 +24,8 @@ const $ = (id) => document.getElementById(id);
 const TEMPLATES = {
   C: '#include <stdio.h>\n\nint main() {\n    \n    return 0;\n}\n',
   'C++': '#include <iostream>\nusing namespace std;\n\nint main() {\n    \n    return 0;\n}\n',
-  Python3: '# 读入一行输入\na, b = map(int, input().split())\nprint(a + b)\n',
+  Python3: '# 请在下方编写代码\n',
 };
-
 // ---------------- 初始化 ----------------
 document.addEventListener('DOMContentLoaded', init);
 
@@ -159,6 +158,7 @@ async function selectChapter(no, name, items) {
     el.classList.remove('is-active');
   }
 
+  
   // 学习模式：收起代码区，把空间全给内容
   document.body.classList.add('is-lesson-mode');
 
@@ -386,8 +386,12 @@ function syncGutter() {
 async function submit() {
   if (!current || submitting) return;
   const code = $('codeInput').value;
-  if (!code.trim()) {
-    alert('代码是空的');
+  const meaningful = code
+    .split('\n')
+    .map((l) => l.replace(/#.*$/, '').replace(/\/\/.*$/, '').trim())
+    .filter(Boolean);
+  if (!meaningful.length) {
+    alert('请先编写代码再提交');
     return;
   }
 
