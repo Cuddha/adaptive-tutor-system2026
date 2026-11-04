@@ -10,18 +10,36 @@ class TranslationLLMGateway:
     """LLM网关服务"""
     
     def __init__(self):
-        # 从环境变量或配置中获取API配置
-        self.api_key = "ms-1c965a0c-71c0-43c0-90cd-1ff89a09b701"
-        self.api_base = "https://api-inference.modelscope.cn/v1/"
-        self.model = "Qwen/Qwen2.5-7B-Instruct"
+        # 配置优先级：TUTOR_TRANSLATION_* > TUTOR_OPENAI_* > 空
+        # 之前这里是硬编码的模型与 key，导致 .env 里的配置完全不生效
+        self.api_key = (
+            settings.TUTOR_TRANSLATION_API_KEY
+            or settings.TUTOR_OPENAI_API_KEY
+            or ""
+        )
+        self.api_base = (
+            settings.TUTOR_TRANSLATION_API_BASE
+            or settings.TUTOR_OPENAI_API_BASE
+            or ""
+        )
+        self.model = (
+            settings.TUTOR_TRANSLATION_MODEL
+            or settings.TUTOR_OPENAI_MODEL
+            or ""
+        )
 
-        self.max_tokens = 8192
-        self.temperature = 0.7
-        
-        # 初始化OpenAI客户端（兼容魔搭API）
+        self.max_tokens = 1024
+        # 翻译需要确定性，温度用 0（原来 0.7 会让同一句话两次译出不同结果）
+        self.temperature = 0.0
+        # 翻译是同步阻塞调用，必须设超时，否则上游排队会把 worker 卡住
+        self.timeout = 20.0
+
+        # 初始化OpenAI客户端（兼容魔搭 / DeepSeek 等 OpenAI 兼容接口）
         self.client = OpenAI(
             api_key=self.api_key,
-            base_url=self.api_base
+            base_url=self.api_base,
+            timeout=self.timeout,
+            max_retries=1,
         )
         # 最近一次调用的token用量
         self.last_usage: Optional[dict] = None
@@ -50,8 +68,8 @@ class TranslationLLMGateway:
             full_messages = [{"role": "system", "content": system_prompt}] + messages
             
             # 使用传入的参数或默认值
-            max_tokens = max_tokens or self.max_tokens
-            temperature = temperature or self.temperature
+            max_tokens = self.max_tokens if max_tokens is None else max_tokens
+            temperature = self.temperature if temperature is None else temperature
             
             # 直接调用OpenAI客户端（同步）
             response = self.client.chat.completions.create(
@@ -110,8 +128,8 @@ class TranslationLLMGateway:
             full_messages = [{"role": "system", "content": system_prompt}] + messages
             
             # 使用传入的参数或默认值
-            max_tokens = max_tokens or self.max_tokens
-            temperature = temperature or self.temperature
+            max_tokens = self.max_tokens if max_tokens is None else max_tokens
+            temperature = self.temperature if temperature is None else temperature
             
             # 调用LLM API - OpenAI客户端是同步的
             # 使用 asyncio.to_thread 来在异步环境中运行同步代码
@@ -176,8 +194,8 @@ class TranslationLLMGateway:
             full_messages = [{"role": "system", "content": system_prompt}] + messages
             
             # 使用传入的参数或默认值
-            max_tokens = max_tokens or self.max_tokens
-            temperature = temperature or self.temperature
+            max_tokens = self.max_tokens if max_tokens is None else max_tokens
+            temperature = self.temperature if temperature is None else temperature
             
             # 调用LLM API - OpenAI客户端是同步的
             # 使用 asyncio.to_thread 来在异步环境中运行同步代码
@@ -235,6 +253,16 @@ def translate(text: str) -> str:
                     return text
                 if translated_message.startswith("I apologize") or "Error code" in translated_message or "has no provider supported" in translated_message:
                     logger.warning(f"翻译服务异常，使用原文: {translated_message[:80]}")
+                    return text
+
+                # 译文仍是中文（或与原文完全一致）说明这一跳没起作用，
+                # 记一条告警便于定位，避免"静默不翻译"难以发现
+                zh_cnt = sum(1 for c in translated_message if "\u4e00" <= c <= "\u9fff")
+                if zh_cnt >= max(2, len(translated_message) * 0.3):
+                    logger.warning(
+                        f"翻译结果仍为中文，将使用原文（下游情感模型为英文词表）: "
+                        f"{translated_message[:60]}"
+                    )
                     return text
                 
             except Exception as e:

@@ -138,6 +138,23 @@ services:
       - backend
     restart: unless-stopped
 
+  # 在线判题系统（SyncOJ 后端）—— 独立容器，判题需要 gcc，不并入主 backend
+  oj-backend:
+    build:
+      context: ./oj/backend
+      dockerfile: Dockerfile
+    container_name: ats-oj-backend
+    ports:
+      - "8001:8000"
+    environment:
+      # 复用主站 .env 里的 TUTOR_OPENAI_* 配置，避免两处填同一个 key
+      - DEEPSEEK_API_KEY=${TUTOR_OPENAI_API_KEY:-}
+      - DEEPSEEK_MODEL=${TUTOR_OPENAI_MODEL:-deepseek-chat}
+      - DEEPSEEK_BASE_URL=${TUTOR_OPENAI_API_BASE:-https://api.deepseek.com}
+    volumes:
+      - oj_data:/app/data
+    restart: unless-stopped
+
   # 前端服务
   frontend:
     build:
@@ -155,3 +172,4 @@ services:
 volumes:
   redis_data:
   backend_data:
+  oj_data:

@@ -1,0 +1,1078 @@
+[
+ {
+  "id": 1,
+  "title": "A+B Problem",
+  "description": "<p>请计算两个整数的和并输出结果。</p><p>注意不要有不必要的输出，比如&quot;请输入 a 和 b 的值: &quot;。</p>",
+  "input_description": "<p>一行两个整数。</p>",
+  "output_description": "<p>一个整数表示答案。<br /></p>",
+  "samples": [
+   {
+    "input": "1 1",
+    "output": "2"
+   }
+  ],
+  "tests": [
+   {
+    "input": "1 1\n",
+    "output": "2\n"
+   }
+  ],
+  "difficulty": "易",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "A · 输入输出与复杂度",
+  "module": "A",
+  "knowledge": "输入输出与复杂度",
+  "sort_order": 1
+ },
+ {
+  "id": 188,
+  "title": "求整数均值",
+  "description": "<p>输入4个整数，计算并输出这些整数的和与平均值，其中平均值精确到小数点后1位，试编写相应程序<br /></p>",
+  "input_description": "<p>输入4个整数。<br /></p>",
+  "output_description": "<p>计算并输出这些整数的和与平均值（float形式），其中平均值精确到小数点后1位。<br /></p>",
+  "samples": [
+   {
+    "input": "1 2 3 4",
+    "output": "10 2.5"
+   }
+  ],
+  "tests": [
+   {
+    "input": "1 2 3 4\n",
+    "output": "10 2.5\n"
+   }
+  ],
+  "difficulty": "易",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "A · 输入输出与复杂度",
+  "module": "A",
+  "knowledge": "输入输出与复杂度",
+  "sort_order": 2
+ },
+ {
+  "id": 211,
+  "title": "输出水仙花数数量",
+  "description": "<p><font>输入一个正整数</font>n<font>（</font><font>3&lt;=n&lt;=7</font><font>），输出所有</font><font>n</font><font>位水仙花数。水仙花数是指一个</font><font>n</font><font>位正整数，它的各位数字是</font><font>n</font><font>次幂之和等于它本身，输出n位所有水仙花数数量。试编写相应程序。</font></p><p><font>例如：</font>153<font>各位数字的立方和是</font><font>1^3+5^3+3^3=153</font><font>。</font></p>",
+  "input_description": "<p>输入一个正整数n</p>",
+  "output_description": "<p>输出n位所有水仙花数数量</p>",
+  "samples": [
+   {
+    "input": "3",
+    "output": "4"
+   }
+  ],
+  "tests": [
+   {
+    "input": "3\n",
+    "output": "4\n"
+   }
+  ],
+  "difficulty": "易",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "B · 枚举与模拟",
+  "module": "B",
+  "knowledge": "枚举与模拟",
+  "sort_order": 3
+ },
+ {
+  "id": 16,
+  "title": "回文数字",
+  "description": "<p>观察数字：12321，123321 都有一个共同的特征，无论从左到右读还是从右向左读，都是相同的。这样的数字叫做：回文数字。</p><p>本题要求你找到一些5位或6位的十进制数字。满足如下要求：</p><p>该数字的各个数位之和等于输入的整数。</p>",
+  "input_description": "<p>一个正整数 n (10&lt;n&lt;100), 表示要求满足的数位和。</p>",
+  "output_description": "<p>若干行，每行包含一个满足要求的5位或6位整数。</p><p>数字按从小到大的顺序排列。</p><p>如果没有满足条件的，输出：-1</p>",
+  "samples": [
+   {
+    "input": "44",
+    "output": "99899 \n499994 \n589985 \n598895\n 679976 \n688886\n 697796\n 769967 \n778877 \n787787\n 796697\n 859958\n 868868\n 877778\n 886688\n 895598\n949949 \n958859 \n967769 \n976679 \n985589 \n994499"
+   },
+   {
+    "input": "60",
+    "output": "-1"
+   }
+  ],
+  "tests": [
+   {
+    "input": "44\n",
+    "output": "99899 \n499994 \n589985 \n598895\n 679976 \n688886\n 697796\n 769967 \n778877 \n787787\n 796697\n 859958\n 868868\n 877778\n 886688\n 895598\n949949 \n958859 \n967769 \n976679 \n985589 \n994499\n"
+   },
+   {
+    "input": "60\n",
+    "output": "-1\n"
+   }
+  ],
+  "difficulty": "易",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "B · 枚举与模拟",
+  "module": "B",
+  "knowledge": "枚举与模拟",
+  "sort_order": 4
+ },
+ {
+  "id": 216,
+  "title": "兔子繁衍问题",
+  "description": "<p><font>一对兔子，从出生后第三个月起每个月都生一对兔子。小兔子长到第</font>3<font>个月后每个月又生一对兔子。假如兔子都不死，请问第一个月出生的一对兔子，至少需要繁衍到第几个月时兔子总数才可以达到</font><font>n</font><font>对？输入一个不超过</font><font>10000</font><font>的正整数</font><font>n</font><font>，输出兔子总数达到</font><font>n</font><font>最少需要的月数。试编写相应程序。</font><br /></p>",
+  "input_description": "<p>输入比较的整数对n</p>",
+  "output_description": "<p>输入达到 n 最少需要的月数。</p>",
+  "samples": [
+   {
+    "input": "5",
+    "output": "5"
+   }
+  ],
+  "tests": [
+   {
+    "input": "5\n",
+    "output": "5\n"
+   }
+  ],
+  "difficulty": "易",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "B · 递推与递归入门",
+  "module": "B",
+  "knowledge": "递推与递归入门",
+  "sort_order": 5
+ },
+ {
+  "id": 215,
+  "title": "猴子吃桃问题",
+  "description": "<p><font>一只猴子第一天摘下若干个桃子，当即吃了一半，还不过瘾，多吃了一个；第二天早上又将剩下桃子吃掉一半，又多吃了一个。以后每天早上都是了前一天剩下的一半加一个。到第</font>n<font>天早上想再吃时就只剩下一个桃子了。问：第一天一共摘了多少个桃子？试编写相应程序（提示：采取逆向思维的方法，从后往前判断）</font><br /></p>",
+  "input_description": "<p>输入正整数n，表示第n天。<br /></p>",
+  "output_description": "<p>输出桃子个数。</p>",
+  "samples": [
+   {
+    "input": "10",
+    "output": "1534"
+   }
+  ],
+  "tests": [
+   {
+    "input": "10\n",
+    "output": "1534\n"
+   }
+  ],
+  "difficulty": "易",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "B · 递推与递归入门",
+  "module": "B",
+  "knowledge": "递推与递归入门",
+  "sort_order": 6
+ },
+ {
+  "id": 124,
+  "title": "斐波那契数列",
+  "description": "<p>在数学上，斐波那契数列的定义为：$F(1)=1,F(2)=1,F(n)=F(n-1)+F(n-2)(n \\geq 3,n∈N^*)$。</p><p>那么给定一个数n，你能判断它是不是斐波那契数列中的某项吗？</p><p>若是，输出“Yes”，否则输出“No”。</p>",
+  "input_description": "<p>一个整数n。$ (1 \\leq n \\leq 1e9) $</p>",
+  "output_description": "<p>输出一行字符串，&quot;Yes&quot;或者“No”。</p>",
+  "samples": [
+   {
+    "input": "2",
+    "output": "Yes"
+   }
+  ],
+  "tests": [
+   {
+    "input": "2\n",
+    "output": "Yes\n"
+   }
+  ],
+  "difficulty": "易",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "B · 递推与递归入门",
+  "module": "B",
+  "knowledge": "递推与递归入门",
+  "sort_order": 7
+ },
+ {
+  "id": 270,
+  "title": "选择排序",
+  "description": "<p><font>输入一个正整数</font>n(1&lt;n&lt;=10),<font>再输入</font><font>n</font><font>个整数，将他们从大到小排序后输出。试编写相应程序。</font><br /></p>",
+  "input_description": "<p>先输入一个n 然后在输入n个数，都是整数形式。<br /><br /></p>",
+  "output_description": "<p>输出从大到小排序后的数。中间用空格隔开，输出结尾不保留空格。</p>",
+  "samples": [
+   {
+    "input": "5\n1 2 3 4 5",
+    "output": "5 4 3 2 1"
+   }
+  ],
+  "tests": [
+   {
+    "input": "5\n1 2 3 4 5\n",
+    "output": "5 4 3 2 1\n"
+   }
+  ],
+  "difficulty": "中",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "B · 排序",
+  "module": "B",
+  "knowledge": "排序",
+  "sort_order": 8
+ },
+ {
+  "id": 579,
+  "title": "归并排序",
+  "description": "<p>对下列数字按照大小进行归并排序</p>",
+  "input_description": "<p>输入两行。</p><p>第一行：数字n，代表输入数字的个数。</p><p>第二行：n个数字。</p>",
+  "output_description": "<p>输出一行，n个有序数字，数字之间用空格隔开，末尾不包含空格。</p>",
+  "samples": [
+   {
+    "input": "9\n85 96 78 35 125 63 25 13 101",
+    "output": "13 25 35 63 78 85 96 101 125"
+   }
+  ],
+  "tests": [
+   {
+    "input": "9\n85 96 78 35 125 63 25 13 101\n",
+    "output": "13 25 35 63 78 85 96 101 125\n"
+   }
+  ],
+  "difficulty": "中",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "B · 排序",
+  "module": "B",
+  "knowledge": "排序",
+  "sort_order": 9
+ },
+ {
+  "id": 580,
+  "title": "快速排序",
+  "description": "<p>使用快速排序算法对下列数字排序。</p>",
+  "input_description": "<p>输入两行。</p><p>第一行：一个数字n，表示需要排序的元素个数。</p><p>第二行：n个数字。</p>",
+  "output_description": "<p>输出一行。n个有序的数字，数字之间空格隔开，末尾不包含空格。</p>",
+  "samples": [
+   {
+    "input": "9\n85 96 78 35 125 63 25 13 101",
+    "output": "13 25 35 63 78 85 96 101 125"
+   }
+  ],
+  "tests": [
+   {
+    "input": "9\n85 96 78 35 125 63 25 13 101\n",
+    "output": "13 25 35 63 78 85 96 101 125\n"
+   }
+  ],
+  "difficulty": "中",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "B · 排序",
+  "module": "B",
+  "knowledge": "排序",
+  "sort_order": 10
+ },
+ {
+  "id": 577,
+  "title": "二分查找",
+  "description": "<p>给定一个元素为n的升序整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1<br /></p>",
+  "input_description": "<p>元素个数为n（&lt;30）的升序数组nums<br /></p>",
+  "output_description": "<p>target在数组中的下标，没有找到则返回-1<br /></p>",
+  "samples": [
+   {
+    "input": "5\n1 2 3 4 5\n3",
+    "output": "2"
+   },
+   {
+    "input": "2\n1 3\n4",
+    "output": "-1"
+   }
+  ],
+  "tests": [
+   {
+    "input": "5\n1 2 3 4 5\n3\n",
+    "output": "2\n"
+   },
+   {
+    "input": "2\n1 3\n4\n",
+    "output": "-1\n"
+   }
+  ],
+  "difficulty": "中",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "B · 二分与双指针",
+  "module": "B",
+  "knowledge": "二分与双指针",
+  "sort_order": 11
+ },
+ {
+  "id": 180,
+  "title": "合并数组",
+  "description": "<p>给定两个有序数组，第一个增序，第二个降序，输出两个数组合并后的增序数组。</p>",
+  "input_description": "<p>第一行两个整数n和m。（1&lt;=n&lt;=100000,1&lt;=m&lt;=100000）</p><p>第二行n个整数ai。（1&lt;=a[i]&lt;=1e9,a[i]&lt;=a[i+1]）</p><p>第三行m个整数bi。（1&lt;=b[i]&lt;=1e9,b[i]&gt;=b[i+1]）</p>",
+  "output_description": "<p>输出一行，表示合并后的增序数组。</p>",
+  "samples": [
+   {
+    "input": "5 5\n1 2 2 3 3\n5 4 3 2 1",
+    "output": "1 1 2 2 2 3 3 3 4 5"
+   }
+  ],
+  "tests": [
+   {
+    "input": "5 5\n1 2 2 3 3\n5 4 3 2 1\n",
+    "output": "1 1 2 2 2 3 3 3 4 5\n"
+   }
+  ],
+  "difficulty": "中",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "B · 二分与双指针",
+  "module": "B",
+  "knowledge": "二分与双指针",
+  "sort_order": 12
+ },
+ {
+  "id": 212,
+  "title": "求最大公约数和最小公倍数",
+  "description": "<p><font>输入两个正整数</font>m<font>和</font><font>n</font><font>（</font><font>m&lt;=1000,n&lt;=1000</font><font>），求其最大公约数和最小公倍数，试编写相应程序。</font><br /></p>",
+  "input_description": "<p>输入两个整数m 和 n（m&lt;=1000,n&lt;=1000）.</p>",
+  "output_description": "<p>输出其最大公约数和最小公倍数，输出用一个空格隔开。</p>",
+  "samples": [
+   {
+    "input": "15 25",
+    "output": "5 75"
+   }
+  ],
+  "tests": [
+   {
+    "input": "15 25\n",
+    "output": "5 75\n"
+   }
+  ],
+  "difficulty": "易",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "C · 数论基础",
+  "module": "C",
+  "knowledge": "数论基础",
+  "sort_order": 13
+ },
+ {
+  "id": 11,
+  "title": "分解质因数",
+  "description": "<p>求出区间[a,b]中所有整数的质因数分解。</p>",
+  "input_description": "<p>输入两个整数a，b。</p>",
+  "output_description": "<p>每行输出一个数的分解，形如k=a1a2a3...(a1&lt;=a2&lt;=a3...，k也是从小到大的)(具体可看样例)</p>",
+  "samples": [
+   {
+    "input": "3 10",
+    "output": "3=3\n4=2*2\n5=5\n6=2*3\n7=7\n8=2*2*2\n9=3*3\n10=2*5"
+   }
+  ],
+  "tests": [
+   {
+    "input": "3 10\n",
+    "output": "3=3\n4=2*2\n5=5\n6=2*3\n7=7\n8=2*2*2\n9=3*3\n10=2*5\n"
+   }
+  ],
+  "difficulty": "中",
+  "time_limit": 1000,
+  "memory_limit": 512,
+  "source": "C · 数论基础",
+  "module": "C",
+  "knowledge": "数论基础",
+  "sort_order": 14
+ },
+ {
+  "id": 12,
+  "title": "高精度加法",
+  "description": "<p>输入两个整数a和b，输出这两个整数的和。a和b都不超过100位。算法描述</p><p>由于a和b都比较大，所以不能直接使用语言中的标准数据类型来存储。对于这种问题，一般使用数组来处理。</p><p>定义一个数组A，A[0]用于存储a的个位，A[1]用于存储a的十位，依此类推。同样可以用一个数组B来存储b。</p><p>计算c = a + b的时候，首先将A[0]与B[0]相加，如果有进位产生，则把进位（即和的十位数）存入r，把和的个位数存入C[0]，即C[0]等于(A[0]+B[0])%10。然后计算A[1]与B[1]相加，这时还应将低位进上来的值r也加起来，即C[1]应该是A[1]、B[1]和r三个数的和．如果又有进位产生，则仍可将新的进位存入到r中，和的个位存到C[1]中。依此类推，即可求出C的所有位。</p><p>最后将C输出即可。</p>",
+  "input_description": "<p>输入包括两行，第一行为一个非负整数a，第二行为一个非负整数b。两个整数都不超过100位，两数的最高位都不是0。</p>",
+  "output_description": "<p>输出一行，表示a + b的值。</p>",
+  "samples": [
+   {
+    "input": "20100122201001221234567890\n2010012220100122",
+    "output": "20100122203011233454668012"
+   }
+  ],
+  "tests": [
+   {
+    "input": "20100122201001221234567890\n2010012220100122\n",
+    "output": "20100122203011233454668012\n"
+   }
+  ],
+  "difficulty": "中",
+  "time_limit": 1000,
+  "memory_limit": 512,
+  "source": "C · 数论基础",
+  "module": "C",
+  "knowledge": "数论基础",
+  "sort_order": 15
+ },
+ {
+  "id": 153,
+  "title": "统计单词个数",
+  "description": "<p>本题目要求编写程序统计一行字符中单词的个数。所谓“单词”是指连续不含空格的字符串，各单词之间用空格分隔，空格数可以是多个。<br /></p>",
+  "input_description": "<p>输入给出一行字符。<br /></p>",
+  "output_description": "<p>在一行中输出单词个数。<br /></p>",
+  "samples": [
+   {
+    "input": "Let's go to room 209.",
+    "output": "5"
+   }
+  ],
+  "tests": [
+   {
+    "input": "Let's go to room 209.\n",
+    "output": "5\n"
+   }
+  ],
+  "difficulty": "易",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "C · 字符串处理",
+  "module": "C",
+  "knowledge": "字符串处理",
+  "sort_order": 16
+ },
+ {
+  "id": 514,
+  "title": "凯撒加密",
+  "description": "<p>凯撒加密，是一种古老的加密技术，是把一条信息中的每个字母用字母表中固定距离（k）之后的那个字母代替。试着编写程序，将字符串中的字符进行K值凯撒加密。例如：k=2，字符 a 经过k值凯撒加密之后变为 c ，而字符 z 经过k值凯撒加密之后变为字符b。<br /></p>",
+  "input_description": "<p>第一行输入一个整数k</p><p>第二行输入一个字符串（字符串全是小写的英文字母）</p>",
+  "output_description": "<p>输出k值凯撒加密之后的字符串<br /></p>",
+  "samples": [
+   {
+    "input": "5\nhello",
+    "output": "mjqqt"
+   },
+   {
+    "input": "2\nzb",
+    "output": "bd"
+   }
+  ],
+  "tests": [
+   {
+    "input": "5\nhello\n",
+    "output": "mjqqt\n"
+   },
+   {
+    "input": "2\nzb\n",
+    "output": "bd\n"
+   }
+  ],
+  "difficulty": "中",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "C · 字符串处理",
+  "module": "C",
+  "knowledge": "字符串处理",
+  "sort_order": 17
+ },
+ {
+  "id": 27,
+  "title": "字符串对比",
+  "description": "<p>给定两个仅由大写字母或小写字母组成的字符串(长度介于1到10之间)，它们之间的关系是以下4中情况之一：</p><p>1：两个字符串长度不等。比如 Beijing 和 Hebei</p><p>2：两个字符串不仅长度相等，而且相应位置上的字符完全一致(区分大小写)，比如 Beijing 和 Beijing</p><p>3：两个字符串长度相等，相应位置上的字符仅在不区分大小写的前提下才能达到完全一致（也就是说，它并不满足情况2）。比如 beijing 和 BEIjing</p><p>4：两个字符串长度相等，但是即使是不区分大小写也不能使这两个字符串一致。比如 Beijing 和 Nanjing</p><p>编程判断输入的两个字符串之间的关系属于这四类中的哪一类，给出所属的类的编号。</p>",
+  "input_description": "<p>包括两行，每行都是一个字符串</p>",
+  "output_description": "<p>仅有一个数字，表明这两个字符串的关系编号</p>",
+  "samples": [
+   {
+    "input": "BEIjing\nbeiJing",
+    "output": "3"
+   }
+  ],
+  "tests": [
+   {
+    "input": "BEIjing\nbeiJing\n",
+    "output": "3\n"
+   }
+  ],
+  "difficulty": "易",
+  "time_limit": 1000,
+  "memory_limit": 512,
+  "source": "C · 字符串处理",
+  "module": "C",
+  "knowledge": "字符串处理",
+  "sort_order": 18
+ },
+ {
+  "id": 571,
+  "title": "实现一个通用的循环队列",
+  "description": "<p>•向队列中插入若干个元素（循环队列最大容量为8），访问并移除队列中的所有元素。（当插入元素大于队列最大容量时输出This queue is overflow!）<br /></p>",
+  "input_description": "<p>•输入：要插入的元素的个数</p><p>•要插入的每一个元素的值</p>",
+  "output_description": "<p>•输出：访问并移除的每一个元素的值<br /></p>",
+  "samples": [
+   {
+    "input": "9\n1 4 6 7 9 10 5 3 8",
+    "output": "This queue is overflow!\n1 4 6 7 9 10 5 3"
+   }
+  ],
+  "tests": [
+   {
+    "input": "9\n1 4 6 7 9 10 5 3 8\n",
+    "output": "This queue is overflow!\n1 4 6 7 9 10 5 3\n"
+   }
+  ],
+  "difficulty": "中",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "D · 队列",
+  "module": "D",
+  "knowledge": "队列",
+  "sort_order": 19
+ },
+ {
+  "id": 572,
+  "title": "用队列实现滑动窗口",
+  "description": "<p>用队列实现下面功能，给定一个数组 nums 和滑动窗口的大小 k，请找出所有滑动窗口里的最大值。<br /></p>",
+  "input_description": "<p>第一行为数组的长度（&lt;10），第二行为数组的元素，第三行为滑动窗口的大小k</p>",
+  "output_description": "<p>输出所有滑动窗口里的最大值</p>",
+  "samples": [
+   {
+    "input": "8\n1 3 -1 -3 5 3 6 7\n3",
+    "output": "3 3 5 5 6 7"
+   }
+  ],
+  "tests": [
+   {
+    "input": "8\n1 3 -1 -3 5 3 6 7\n3\n",
+    "output": "3 3 5 5 6 7\n"
+   }
+  ],
+  "difficulty": "中",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "D · 队列",
+  "module": "D",
+  "knowledge": "队列",
+  "sort_order": 20
+ },
+ {
+  "id": 573,
+  "title": "约瑟夫循环链表问题",
+  "description": "<p style=\"margin-left: 0px;\">约瑟夫问题：</p><p>n个人围成一个圆圈，首先第1个人<b>从1开始</b>顺时针报数，报到第m个人，令其出列。然后再从下一个人开始，从1顺时针报数，报到第m个人，再令其出列，…，如此下去,直到圆圈中只剩一个人为止。此人即为优胜者。</p>",
+  "input_description": "<p>输入两个数，n和m。<br /></p>",
+  "output_description": "<p>输出优胜者的编号。<br /></p>",
+  "samples": [
+   {
+    "input": "5 3",
+    "output": "4"
+   }
+  ],
+  "tests": [
+   {
+    "input": "5 3\n",
+    "output": "4\n"
+   }
+  ],
+  "difficulty": "中",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "D · 链表",
+  "module": "D",
+  "knowledge": "链表",
+  "sort_order": 21
+ },
+ {
+  "id": 586,
+  "title": "合并升序链表",
+  "description": "<p>将两个升序链表合并为一个新的<b>升序</b>链表并返回。</p><p>新链表是通过拼接给定的两个链表的所有节点组成的。</p><p>规定不准用STL，必须用链表实现功能。用STL实现链表功能一律不得分。<br /></p>",
+  "input_description": "<p>第一行，一个数字N，表示list1的长度。</p><p>第二行，list1的内容，N个升序的数字。</p><p>第三行，一个数字M，表示list2的长度。</p><p>第四行，list2的内容，M个升序的数字。</p>",
+  "output_description": "<p>输出一行。表示合并之后的升序链表。</p>",
+  "samples": [
+   {
+    "input": "3\n1 2 4\n2\n3 5",
+    "output": "1 2 3 4 5"
+   }
+  ],
+  "tests": [
+   {
+    "input": "3\n1 2 4\n2\n3 5\n",
+    "output": "1 2 3 4 5\n"
+   }
+  ],
+  "difficulty": "中",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "D · 链表",
+  "module": "D",
+  "knowledge": "链表",
+  "sort_order": 22
+ },
+ {
+  "id": 282,
+  "title": "求一批整数出现最多的数字。",
+  "description": "<p><font>输入一个正整数</font>n<font>（</font><font>1&lt;n&lt;=1000</font><font>），再输入</font><font>n</font><font>个整数，分析每个整数的每一位数字，求出现次数最多的数字。例如输入</font><font>n</font><font>个整数，分析每个整数的每一位数字，求出现次数最多的数字。例如输入</font><font>3</font><font>个整数</font><font>1234</font><font>、</font><font>2345</font><font>、</font><font>3456</font><font>，其中出现次数最多的数字是</font><font>3</font><font>和</font><font>4</font><font>，均出现了</font><font>3</font><font>次。试编写相应程序。</font><br /></p>",
+  "input_description": "<p><font>输入一个正整数</font>n<font>（</font><font>1&lt;n&lt;=1000</font><font>），再输入</font><font>n</font><font>个整数。</font><br /></p>",
+  "output_description": "<p>输出出现次数最多的数字，如果是多个数字同时出现，按从小到大输出，之间用空格隔开，最后无空格。</p>",
+  "samples": [
+   {
+    "input": "3\n1234 2345 3456",
+    "output": "3 4"
+   }
+  ],
+  "tests": [
+   {
+    "input": "3\n1234 2345 3456\n",
+    "output": "3 4\n"
+   }
+  ],
+  "difficulty": "中",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "D · 哈希与查找",
+  "module": "D",
+  "knowledge": "哈希与查找",
+  "sort_order": 23
+ },
+ {
+  "id": 422,
+  "title": "经典的哈希表——TwoSum问题（1）",
+  "description": "<p>给一个整数数组，找到两个数使得他们的和等于一个给定的数target。你需要实现的函数twoSum需要返回这两个数的下标, 并且第一个下标小于第二个下标。注意这里下标的范围是 1 到 n，不是以 0 开头。数组是给定的，允许对数组建索引，每次的问题输入是target。<br /></p><p>要求：需使用C++类与对象的方法实现哈希表的定义，哈希函数及冲突处理方法可自定义。</p>",
+  "input_description": "<p>控制台输入三行，第一行表示数组的大小，第二行顺序输入整数，第三行输入目标值。</p>",
+  "output_description": "<p>输出查询到的下标，注意：</p><p>（1）输出的两个下标是从1开始计数，且前一个数的下标小于后一个数；</p><p>（2）按照第一个数的下标递增依次换行输出所有的结果。</p><p>（3）最后一行保留一个换行空格；</p><p>（4）如果不存在，则返回None。</p>",
+  "samples": [
+   {
+    "input": "4\n2 7 11 15\n9",
+    "output": "[1,2]"
+   },
+   {
+    "input": "10\n2 5 11 8 1 7 4 16 13 3\n15",
+    "output": "[1,9]\n[3,7]\n[4,6]"
+   },
+   {
+    "input": "3\n1 2 3\n2",
+    "output": "None"
+   }
+  ],
+  "tests": [
+   {
+    "input": "4\n2 7 11 15\n9\n",
+    "output": "[1,2]\n"
+   },
+   {
+    "input": "10\n2 5 11 8 1 7 4 16 13 3\n15\n",
+    "output": "[1,9]\n[3,7]\n[4,6]\n"
+   },
+   {
+    "input": "3\n1 2 3\n2\n",
+    "output": "None\n"
+   }
+  ],
+  "difficulty": "较难",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "D · 哈希与查找",
+  "module": "D",
+  "knowledge": "哈希与查找",
+  "sort_order": 24
+ },
+ {
+  "id": 2,
+  "title": "2n皇后问题",
+  "description": "<p>给定一个n*n的棋盘，棋盘中有一些位置不能放皇后。现在要向棋盘中放入n个黑皇后和n个白皇后，使任意的两个黑皇后都不在同一行、同一列或同一条对角线上，任意的两个白皇后都不在同一行、同一列或同一条对角线上。问总共有多少种放法？n小于等于8。</p>",
+  "input_description": "<p>输入的第一行为一个整数n，表示棋盘的大小。　　接下来n行，每行n个0或1的整数，如果一个整数为1，表示对应的位置可以放皇后，如果一个整数为0，表示对应的位置不可以放皇后。</p>",
+  "output_description": "<p>输出一个整数，表示总共有多少种放法。</p>",
+  "samples": [
+   {
+    "input": "4\n1 1 1 1\n1 1 1 1\n1 1 1 1\n1 1 1 1",
+    "output": "2"
+   },
+   {
+    "input": "4\n1 0 1 1\n1 1 1 1\n1 1 1 1\n1 1 1 1",
+    "output": "0"
+   }
+  ],
+  "tests": [
+   {
+    "input": "4\n1 1 1 1\n1 1 1 1\n1 1 1 1\n1 1 1 1\n",
+    "output": "2\n"
+   },
+   {
+    "input": "4\n1 0 1 1\n1 1 1 1\n1 1 1 1\n1 1 1 1\n",
+    "output": "0\n"
+   }
+  ],
+  "difficulty": "较难",
+  "time_limit": 1000,
+  "memory_limit": 512,
+  "source": "E · 回溯与剪枝",
+  "module": "E",
+  "knowledge": "回溯与剪枝",
+  "sort_order": 25
+ },
+ {
+  "id": 19,
+  "title": "剪格子",
+  "description": "<p>如下图所示，3 x 3 的格子中填写了一些整数。</p><p><img src=\"/public/upload/afb9034a5e.jpg\" alt=\"1537274166948.jpg\" /></p><p>我们沿着图中的星号线剪开，得到两个部分，每个部分的数字和都是60。</p><p>本题的要求就是请你编程判定：对给定的m x n 的格子中的整数，是否可以分割为两个部分，使得这两个区域的数字和相等。</p><p>如果存在多种解答，请输出包含左上角格子的那个区域包含的格子的最小数目。</p><p>如果无法分割，则输出 0。</p>",
+  "input_description": "<p>程序先读入两个整数 m n 用空格分割 (m,n&lt;10)。</p><p>表示表格的宽度和高度。</p><p>接下来是n行，每行m个正整数，用空格分开。每个整数不大于10000。</p>",
+  "output_description": "<p>输出一个整数，表示在所有解中，包含左上角的分割区可能包含的最小的格子数目。</p>",
+  "samples": [
+   {
+    "input": "3 3\n 10 1 52\n 20 30 1\n 1 2 3",
+    "output": "3"
+   },
+   {
+    "input": "4 3 \n1 1 1 1 \n1 30 80 2 \n1 1 1 100",
+    "output": "10"
+   }
+  ],
+  "tests": [
+   {
+    "input": "3 3\n 10 1 52\n 20 30 1\n 1 2 3\n",
+    "output": "3\n"
+   },
+   {
+    "input": "4 3 \n1 1 1 1 \n1 30 80 2 \n1 1 1 100\n",
+    "output": "10\n"
+   }
+  ],
+  "difficulty": "较难",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "E · 回溯与剪枝",
+  "module": "E",
+  "knowledge": "回溯与剪枝",
+  "sort_order": 26
+ },
+ {
+  "id": 411,
+  "title": "用DFS解决滑雪问题",
+  "description": "<p>Michael喜欢滑雪这并不奇怪，因为滑雪的确很刺激。可是为了获得速度，滑的区域必须向下倾斜，而且当你滑到坡底，你不得不再次走上坡或者等待升降机来载你。Michael想知道载一个区域中最长底滑坡。区域由一个二维数组给出。数组的每个数字代表点的高度。<br /></p><p>下面是一个例子:一个人可以从某个点滑向上下左右相邻四个点之一，当且仅当高度减小。一条可滑行的滑坡为24-17-16-1。当然25-24-23-...-3-2-1更长。事实上，这是最长的一条。<br /></p><p><b>要求用DFS实现</b></p>",
+  "input_description": "<p>输入的第一行表示区域的行数R和列数C(1 &lt;= R,C &lt;= 100)。下面是R行，每行有C个整数，代表高度h，0&lt;=h&lt;=10000。<br /></p>",
+  "output_description": "<p>输出最长区域的长度。<br /></p>",
+  "samples": [
+   {
+    "input": "5 5\n1 2 3 4 5\n16 17 18 19 6\n15 24 25 20 7\n14 23 22 21 8\n13 12 11 10 9",
+    "output": "25"
+   }
+  ],
+  "tests": [
+   {
+    "input": "5 5\n1 2 3 4 5\n16 17 18 19 6\n15 24 25 20 7\n14 23 22 21 8\n13 12 11 10 9\n",
+    "output": "25\n"
+   }
+  ],
+  "difficulty": "较难",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "E · DFS 与 BFS",
+  "module": "E",
+  "knowledge": "DFS 与 BFS",
+  "sort_order": 27
+ },
+ {
+  "id": 412,
+  "title": "用BFS解决滑雪问题",
+  "description": "<p style=\"margin-left: 0px;\">Michael喜欢滑雪这并不奇怪，因为滑雪的确很刺激。可是为了获得速度，滑的区域必须向下倾斜，而且当你滑到坡底，你不得不再次走上坡或者等待升降机来载你。Michael想知道载一个区域中最长底滑坡。区域由一个二维数组给出。数组的每个数字代表点的高度。<br /></p><p>下面是一个例子:一个人可以从某个点滑向上下左右相邻四个点之一，当且仅当高度减小。一条可滑行的滑坡为24-17-16-1。当然25-24-23-...-3-2-1更长。事实上，这是最长的一条。<br /></p><p><b>要求用BFS实现</b></p>",
+  "input_description": "<p>输入的第一行表示区域的行数R和列数C(1 &lt;= R,C &lt;= 100)。下面是R行，每行有C个整数，代表高度h，0&lt;=h&lt;=10000。<br /></p>",
+  "output_description": "<p>输出最长区域的长度。<br /></p>",
+  "samples": [
+   {
+    "input": "5 5\n1 2 3 4 5\n16 17 18 19 6\n15 24 25 20 7\n14 23 22 21 8\n13 12 11 10 9",
+    "output": "25"
+   }
+  ],
+  "tests": [
+   {
+    "input": "5 5\n1 2 3 4 5\n16 17 18 19 6\n15 24 25 20 7\n14 23 22 21 8\n13 12 11 10 9\n",
+    "output": "25\n"
+   }
+  ],
+  "difficulty": "较难",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "E · DFS 与 BFS",
+  "module": "E",
+  "knowledge": "DFS 与 BFS",
+  "sort_order": 28
+ },
+ {
+  "id": 88,
+  "title": "迷宫游戏",
+  "description": "<p>小华想要开发一个传统的迷宫游戏，但是他不知道自己设计的地图是否符合要求，请你帮助他来判断。</p>",
+  "input_description": "<p>第一行两个整数n， m，为迷宫的长宽。</p><p>接下来n行，每行m个数，数之间没有间隔，为0或1中的一个。0表示这个格子可以通过，1表示不可以。假设迷宫的起点固定为（1,1）,迷宫的出口固定为(n,m)。每次移动时只能向上下左右4个方向移动到另外一个可以通过的格子里，每次移动算一步。</p>",
+  "output_description": "<p>输出一行”Yes”代表地图符合要求，“No”代表地图不符合要求（既起点到终点无通路）</p>",
+  "samples": [
+   {
+    "input": "3 3\n0 0 1\n1 0 0\n1 1 0",
+    "output": "Yes"
+   }
+  ],
+  "tests": [
+   {
+    "input": "3 3\n0 0 1\n1 0 0\n1 1 0\n",
+    "output": "Yes\n"
+   }
+  ],
+  "difficulty": "较难",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "E · DFS 与 BFS",
+  "module": "E",
+  "knowledge": "DFS 与 BFS",
+  "sort_order": 29
+ },
+ {
+  "id": 590,
+  "title": "二叉树",
+  "description": "<p>给定一个带#号的先序遍历序列，实现以下操作：</p><p style=\"margin-left: 18pt;\">1.重建该二叉树；</p><p style=\"margin-left: 18pt;\">2.判断该树是否是一颗平衡二叉树(平衡树的定义，树上的任何一个节点，其左右子树高度之差小于等于1)。</p>",
+  "input_description": "<p>输入的第一行是一个数字n，表示序列的大小。</p><p>输入的第二行是带#的整数序列（中间以空格分开），为某二叉树的先序遍历序列。<br /></p>",
+  "output_description": "<p>输出一行，true或者false，表示是否为平衡二叉树。<br /></p>",
+  "samples": [
+   {
+    "input": "17\n8 6 3 # # 7 11 # # # 10 # 2 # 5 # #",
+    "output": "false"
+   },
+   {
+    "input": "11\n5 3 4 # # # 6 # 7 # #",
+    "output": "true"
+   }
+  ],
+  "tests": [
+   {
+    "input": "17\n8 6 3 # # 7 11 # # # 10 # 2 # 5 # #\n",
+    "output": "false\n"
+   },
+   {
+    "input": "11\n5 3 4 # # # 6 # 7 # #\n",
+    "output": "true\n"
+   }
+  ],
+  "difficulty": "较难",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "F · 二叉树",
+  "module": "F",
+  "knowledge": "二叉树",
+  "sort_order": 30
+ },
+ {
+  "id": 441,
+  "title": "右叶子之和",
+  "description": "<p><font>给定一棵二叉树，计算</font><font>树</font><font>中</font><font>所有右叶子之和。</font><br /></p><p>注：<font style=\"\">题中给定的二叉树需要自己根据测试案例中的层序遍历序列构建。</font></p>",
+  "input_description": "<p><font>输入二叉树的层序遍历的长度；</font></p><p><font>输入二叉树的层序遍历序列（树中的每个节点的值都为大于等于0的整型数据，</font>-1<font>代表空指针）。</font><br /></p>",
+  "output_description": "<p><font>输出二叉树的所有右叶子之和。（行末尾无空格）</font><br /></p>",
+  "samples": [
+   {
+    "input": "11\n3 9 18 15 1 -1 -1 -1 -1 -1 -1",
+    "output": "19"
+   }
+  ],
+  "tests": [
+   {
+    "input": "11\n3 9 18 15 1 -1 -1 -1 -1 -1 -1\n",
+    "output": "19\n"
+   }
+  ],
+  "difficulty": "较难",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "F · 二叉树",
+  "module": "F",
+  "knowledge": "二叉树",
+  "sort_order": 31
+ },
+ {
+  "id": 443,
+  "title": "图的连通分量",
+  "description": "<p><font>给定一个无向图</font>G<font>，其中包含</font><font>n</font><font>个顶点（编号为</font><font>1-n</font><font>）和</font><font>m</font><font>条边，求图中连通分量的个数。连通分量的定义为：一个无向图的极大连通子图称为该图的连通分量。连通图的极大连通子图只有</font><font>1</font><font>个，就是其自身。非连通图可以拆为数个极大，也称</font><a href=\"https://www.baidu.com/s?wd=%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao\" target=\"_blank\"><font>连通分量</font></a><font>，每个分量显然都是连通图。</font><br /></p>",
+  "input_description": "<p>n<font>（</font>n&gt;=0<font>）和</font>m(m&gt;=0)<font>，</font><font>分别代表</font><font>图中顶点和边的个数；</font></p><p><font>图中每条边连接的两个顶点的值。</font></p>",
+  "output_description": "<p><font>图中连通分量的个数。（行末尾无空格）</font><br /></p>",
+  "samples": [
+   {
+    "input": "4 2\n1 2\n3 4",
+    "output": "2"
+   }
+  ],
+  "tests": [
+   {
+    "input": "4 2\n1 2\n3 4\n",
+    "output": "2\n"
+   }
+  ],
+  "difficulty": "较难",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "F · 图基础",
+  "module": "F",
+  "knowledge": "图基础",
+  "sort_order": 32
+ },
+ {
+  "id": 449,
+  "title": "二分图",
+  "description": "<p style=\"text-align: left;\">给定一个无向图G，当这个图为二分图时返回true。</p><p style=\"text-align: left;\">二分图的定义为：如果我们能将一个图的节点集合分割成两个独立的子集A和B，使得图中的每一条边的两个节点一个来自A集合，一个来自B集合，我们就将这个图称为二分图。</p><p style=\"text-align: left;\">G将会以邻接表的方式给出，G[i]表示图中与节点i相连的所有节点。每个节点都是一个在0到G.length-1之间的整数。图中没有自环和平行边：G[i]中不存在i，并且G[i]中没有重复的值。</p>",
+  "input_description": "<p style=\"text-align: left;\">输入图中节点的个数；</p><p style=\"text-align: left;\">依次输入与每个节点相连的所有节点（-1代表与某个节点相连的所有节点输入完毕）。</p>",
+  "output_description": "<p>输出该图是否为二分图：是就输出true，不是就输出false。（行末尾无空格）<br /></p>",
+  "samples": [
+   {
+    "input": "4\n1 3 -1\n0 2 -1\n1 3 -1\n0 2 -1",
+    "output": "true"
+   }
+  ],
+  "tests": [
+   {
+    "input": "4\n1 3 -1\n0 2 -1\n1 3 -1\n0 2 -1\n",
+    "output": "true\n"
+   }
+  ],
+  "difficulty": "较难",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "F · 图基础",
+  "module": "F",
+  "knowledge": "图基础",
+  "sort_order": 33
+ },
+ {
+  "id": 593,
+  "title": "邻接表&Kruskal算法",
+  "description": "<p>用邻接表存储图，利用该邻接表使用Kruskal算法生成最小生成树</p>",
+  "input_description": "<p><img alt=\"2021-06-18_16-24.png\" src=\"http://jf.shuishan.net.cn/public/upload/cc776dd8c4.png\" width=\"630\" height=\"245\" /></p><p>1. 输入的第一行为两个值v, e</p><p>v表示图的节点数量，e表示图中边的数量<br /></p><p>2. 接下来e行，每行有三个值</p><p>第一个值为源顶点、第二个值为目的顶点、表示这两个顶点之间有边连接，第三个值为边的权重值（均为int类型）<br /></p>",
+  "output_description": "<p>输出最小生成树的权值和</p>",
+  "samples": [
+   {
+    "input": "6 10\n0 1 6\n0 3 4\n1 2 10\n1 3 7\n1 4 7\n2 3 8\n2 4 5\n2 5 6\n3 4 12\n4 5 7",
+    "output": "28"
+   }
+  ],
+  "tests": [
+   {
+    "input": "6 10\n0 1 6\n0 3 4\n1 2 10\n1 3 7\n1 4 7\n2 3 8\n2 4 5\n2 5 6\n3 4 12\n4 5 7\n",
+    "output": "28\n"
+   }
+  ],
+  "difficulty": "难",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "F · 最小生成树",
+  "module": "F",
+  "knowledge": "最小生成树",
+  "sort_order": 34
+ },
+ {
+  "id": 440,
+  "title": "最小生成树",
+  "description": "<p>输入一个带权连通图，输出最小生成树</p>",
+  "input_description": "<p>输入包含如下内容：</p><p>第一行两个整型数N和M，分别表示结点的个数以及带权边的个数</p><p>第二行输入N个数，分别表示N个结点</p><p>第三行开始，一共输入M行，每行有三个整型数，分别表示边的两端结点以及权值；</p>",
+  "output_description": "<p>输出包含两个部分：</p><p>1、输出若干行，每行输出三个数 a,b,c（相邻两数中间空一个空格），分别表示最小生成树中边的两端结点以及权值，需要注意的是：</p><p>（1）请按照权值的顺序按行依次输出；</p><p>（2）每行前两个值a和b（边的两端结点）要满足a&lt;=b。</p><p>2、最后一行输出一个整型数，表示最小生成树所有权值和，末尾不要留换行符。</p>",
+  "samples": [
+   {
+    "input": "6 10\n0 1 2 3 4 5\n0 1 6\n2 0 1\n0 3 5\n1 2 5\n2 3 5\n1 4 3\n2 4 6\n2 5 4\n3 5 2\n4 5 6",
+    "output": "0 2 1\n3 5 2\n1 4 3\n2 5 4\n1 2 5\n15"
+   },
+   {
+    "input": "6 10\n0 1 2 3 4 5\n0 1 6\n0 3 4\n1 3 7\n1 4 7\n1 2 10\n3 2 8\n3 4 12\n2 4 5\n2 5 6\n4 5 7",
+    "output": "0 3 4\n2 4 5\n0 1 6\n2 5 6\n1 4 7\n28"
+   }
+  ],
+  "tests": [
+   {
+    "input": "6 10\n0 1 2 3 4 5\n0 1 6\n2 0 1\n0 3 5\n1 2 5\n2 3 5\n1 4 3\n2 4 6\n2 5 4\n3 5 2\n4 5 6\n",
+    "output": "0 2 1\n3 5 2\n1 4 3\n2 5 4\n1 2 5\n15\n"
+   },
+   {
+    "input": "6 10\n0 1 2 3 4 5\n0 1 6\n0 3 4\n1 3 7\n1 4 7\n1 2 10\n3 2 8\n3 4 12\n2 4 5\n2 5 6\n4 5 7\n",
+    "output": "0 3 4\n2 4 5\n0 1 6\n2 5 6\n1 4 7\n28\n"
+   }
+  ],
+  "difficulty": "难",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "F · 最小生成树",
+  "module": "F",
+  "knowledge": "最小生成树",
+  "sort_order": 35
+ },
+ {
+  "id": 187,
+  "title": "最大子串和",
+  "description": "<p>给出一个长度为n的数组，你需要找出一个子串（注意子串在数组中是连续的一段），并且该子串的和是最大的，最后你只需要输出这个最大的子串和即可。</p>",
+  "input_description": "<p>第一行一个整数n。(1&lt;=n&lt;=100000)</p><p>接下来一个n个整数，表示该数组a[1..n]。（-10000&lt;=a[i]&lt;=10000）</p>",
+  "output_description": "<p>输出一个整数，表示最大的子串和。</p>",
+  "samples": [
+   {
+    "input": "5\n1 2 3 4 5",
+    "output": "15"
+   },
+   {
+    "input": "5\n-1 -2 -3 -4 -5",
+    "output": "-1"
+   }
+  ],
+  "tests": [
+   {
+    "input": "5\n1 2 3 4 5\n",
+    "output": "15\n"
+   },
+   {
+    "input": "5\n-1 -2 -3 -4 -5\n",
+    "output": "-1\n"
+   }
+  ],
+  "difficulty": "中",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "G · 线性 DP",
+  "module": "G",
+  "knowledge": "线性 DP",
+  "sort_order": 36
+ },
+ {
+  "id": 54,
+  "title": "最大子阵",
+  "description": "<p>给定一个n*m的矩阵A，求A中的一个非空子矩阵，使这个子矩阵中的元素和最大。</p><p>其中，A的子矩阵指在A中行和列均连续的一块。</p>",
+  "input_description": "<p>输入的第一行包含两个整数n, m，分别表示矩阵A的行数和列数。</p><p>接下来n行，每行m个整数，表示矩阵A。</p>",
+  "output_description": "<p>输出一行，包含一个整数，表示A中最大的子矩阵中的元素和。</p>",
+  "samples": [
+   {
+    "input": "3 3 \n-1 -4 3 \n3 4 -1 \n-5 -2 8",
+    "output": "10"
+   }
+  ],
+  "tests": [
+   {
+    "input": "3 3 \n-1 -4 3 \n3 4 -1 \n-5 -2 8\n",
+    "output": "10\n"
+   }
+  ],
+  "difficulty": "难",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "G · 线性 DP",
+  "module": "G",
+  "knowledge": "线性 DP",
+  "sort_order": 37
+ },
+ {
+  "id": 37,
+  "title": "地宫取宝",
+  "description": "<p>X 国王有一个地宫宝库。是 n x m 个格子的矩阵。每个格子放一件宝贝。每个宝贝贴着价值标签。<br /><br />地宫的入口在左上角，出口在右下角。<br /><br />小明被带到地宫的入口，国王要求他只能向右或向下行走。<br /><br />走过某个格子时，如果那个格子中的宝贝价值比小明手中任意宝贝价值都大，小明就可以拿起它（当然，也可以不拿）。<br /><br />当小明走到出口时，如果他手中的宝贝恰好是k件，则这些宝贝就可以送给小明。<br /><br />请你帮小明算一算，在给定的局面下，他有多少种不同的行动方案能获得这k件宝贝。<br /></p>",
+  "input_description": "<p>输入一行3个整数，用空格分开：n m k (1&lt;=n,m&lt;=50, 1&lt;=k&lt;=12)<br /><br />接下来有 n 行数据，每行有 m 个整数 Ci (0&lt;=Ci&lt;=12)代表这个格子上的宝物的价值<br /></p>",
+  "output_description": "<p>要求输出一个整数，表示正好取k个宝贝的行动方案数。该数字可能很大，输出它对 1000000007 取模的结果。<br /></p>",
+  "samples": [
+   {
+    "input": "2 2 2\n1 2\n2 1",
+    "output": "2"
+   },
+   {
+    "input": "2 3 2\n1 2 3\n2 1 5",
+    "output": "14"
+   }
+  ],
+  "tests": [
+   {
+    "input": "2 2 2\n1 2\n2 1\n",
+    "output": "2\n"
+   },
+   {
+    "input": "2 3 2\n1 2 3\n2 1 5\n",
+    "output": "14\n"
+   }
+  ],
+  "difficulty": "难",
+  "time_limit": 1000,
+  "memory_limit": 256,
+  "source": "G · 线性 DP",
+  "module": "G",
+  "knowledge": "线性 DP",
+  "sort_order": 38
+ }
+]

@@ -82,7 +82,7 @@ download_model.log
 !backend/models/progress_clustering/
 !backend/models/progress_clustering/**
 
-
+!backend/models/README.md
 
 backend/models/sentiment_bert/config.json
 backend/models/sentiment_bert/model.safetensors
@@ -92,10 +92,14 @@ backend/models/sentiment_bert/tokenizer.json
 backend/models/sentiment_bert/vocab.txt
 
 backend/celerybeat-schedule
-backend/celerybeat-schedule
+
 
 sentiment_bert/
 
 frontend/frontend_vue/node_modules
 .gemini/
 gha-creds-*.json
+backend/app/db/database.db
+.workbuddy/
+oj/backend/data/syncoj.db
+CS_Emotion/

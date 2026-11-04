@@ -329,7 +329,7 @@ def done_stuck_counts(window_docs: List[str]) -> Tuple[np.ndarray, np.ndarray]:
 def progress_score_from_proxies(repeat_eq: np.ndarray,
                                 repeat_sim: np.ndarray,
                                 code_change: np.ndarray,
-                                done_hits: np.ndarray,
+                                done_hits: np.ndarray,  
                                 stuck_hits: np.ndarray,
                                 cw_persist: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
     """
