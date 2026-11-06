@@ -141,7 +141,7 @@ services:
   # 在线判题系统（SyncOJ 后端）—— 独立容器，判题需要 gcc，不并入主 backend
   oj-backend:
     build:
-      context: ./oj/backend
+      context: ./backend/oj
       dockerfile: Dockerfile
     container_name: ats-oj-backend
     ports:
@@ -149,7 +149,9 @@ services:
     environment:
       # 复用主站 .env 里的 TUTOR_OPENAI_* 配置，避免两处填同一个 key
       - DEEPSEEK_API_KEY=${TUTOR_OPENAI_API_KEY:-}
-      - DEEPSEEK_MODEL=${TUTOR_OPENAI_MODEL:-deepseek-chat}
+      # 主站的 TUTOR_OPENAI_MODEL 是推理模型（content 为空，内容在 reasoning_content），
+      # OJ 的解析只取 content，所以这里单独用对话模型
+      - DEEPSEEK_MODEL=${OJ_DEEPSEEK_MODEL:-deepseek-chat}
       - DEEPSEEK_BASE_URL=${TUTOR_OPENAI_API_BASE:-https://api.deepseek.com}
     volumes:
       - oj_data:/app/data
